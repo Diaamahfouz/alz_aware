@@ -1,0 +1,15 @@
+{
+    "custom_widget": {
+        "loading": "Loading...",
+        "upload_image": "Upload Image",
+        "upload_video": "Upload Video",
+        "resend": "Resend Code",
+        "try_again": "Try Again",
+        "unexpected_error": "An unexpected error occurred"
+    },
+    "failures": {
+        "offline_failure": "No internet connection",
+        "server_failure": "Failed to connect to server",
+        "cache_failure": "Failed to store data"
+    }
+}

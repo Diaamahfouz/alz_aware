@@ -1,0 +1,14 @@
+{
+    "custom_widget": {
+        "loading": "جار التحميل...",
+        "upload_image": "تحميل صورة",
+        "try_again": "حاول مرة اخرى",
+        "unexpected_error": "حدث خطأ غير متوقع"
+    },
+
+    "failures": {
+        "offline_failure": "لا يوجد اتصال بالإنترنت",
+        "server_failure": "فشل في الاتصال بالخادم",
+        "cache_failure": "فشل في التخزين البيانات "
+    }
+}
