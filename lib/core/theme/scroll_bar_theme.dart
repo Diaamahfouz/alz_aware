@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 ScrollbarThemeData customScrollTheme = ScrollbarThemeData(
-  thumbColor: WidgetStatePropertyAll<Color>(AppColors.black27),
-  trackColor: WidgetStatePropertyAll<Color>(AppColors.grayE4),
+  thumbColor: WidgetStatePropertyAll<Color>(AppColors.black12),
+  trackColor: WidgetStatePropertyAll<Color>(AppColors.greyCF),
   thickness: WidgetStatePropertyAll<double>(6),
   thumbVisibility: WidgetStatePropertyAll<bool>(true),
   trackVisibility: WidgetStatePropertyAll<bool>(false),

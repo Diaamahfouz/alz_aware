@@ -29,8 +29,8 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: [arabicLocale, englishLocale],
-      fallbackLocale: arabicLocale,
-      startLocale: arabicLocale,
+      fallbackLocale: englishLocale,
+      startLocale: englishLocale,
       path: assetsLocalization,
       child: const AlzAWare(),
     ),

@@ -1,15 +1,24 @@
 import 'package:alz_aware/features/home/presentation/screens/home_screen.dart';
+import 'package:alz_aware/features/onboarding/presentation/screens/onboarding_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'routes.dart';
 
 final GoRouter router = GoRouter(
-  initialLocation: Routes.home,
+  initialLocation: Routes.onboarding,
   routes: [
     _customAnimatedGoRoute(
       route: Routes.home,
-      page: (state, context) => const HomeScreen(),
+      page: (state, context) =>
+          HomeScreen(key: ValueKey(context.locale.languageCode.toString())),
+    ),
+    _customAnimatedGoRoute(
+      route: Routes.onboarding,
+      page: (state, context) => OnboardingScreen(
+        key: ValueKey(context.locale.languageCode.toString()),
+      ),
     ),
   ],
 );
