@@ -1,4 +1,5 @@
 import 'package:alz_aware/core/common/widgets/custom_button.dart';
+import 'package:alz_aware/core/routes/routes.dart';
 import 'package:alz_aware/core/theme/app_colors.dart';
 import 'package:alz_aware/core/theme/app_icons.dart';
 import 'package:alz_aware/core/theme/app_images.dart';
@@ -6,6 +7,7 @@ import 'package:alz_aware/core/theme/styles.dart';
 import 'package:alz_aware/features/home/presentation/widgets/slider_sections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../widgets/home_feature_card.dart';
 
@@ -61,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                         title: "Start Test",
                         isGradient: false,
                         onTap: () {
-                          // Navigate to memory test screen
+                          context.push(Routes.questions);
                         },
                       ),
                       Row(
