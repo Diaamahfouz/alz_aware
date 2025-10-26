@@ -14,7 +14,17 @@ const bool runLocal = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize shared preferences
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: [arabicLocale, englishLocale],
+      fallbackLocale: englishLocale,
+      startLocale: englishLocale,
+      path: assetsLocalization,
+      child: const AlzAWare(),
+    ),
+  );
+    // Initialize shared preferences
   await SP.initialSharedPreference();
   // Initialize EasyLocalization
   await EasyLocalization.ensureInitialized();
@@ -26,13 +36,4 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   //==================FOR WEB=====================
   GoRouter.optionURLReflectsImperativeAPIs = true;
-  runApp(
-    EasyLocalization(
-      supportedLocales: [arabicLocale, englishLocale],
-      fallbackLocale: englishLocale,
-      startLocale: englishLocale,
-      path: assetsLocalization,
-      child: const AlzAWare(),
-    ),
-  );
 }

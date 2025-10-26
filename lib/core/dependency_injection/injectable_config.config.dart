@@ -15,6 +15,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../features/questions/presentation/bloc/questions_cubit.dart'
+    as _i504;
 import '../api/api_consumer.dart' as _i207;
 import '../api/app_interceptor.dart' as _i449;
 import '../api/dio_consumer.dart' as _i82;
@@ -32,6 +34,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => coreInjectableModule.prefs,
       preResolve: true,
     );
+    gh.factory<_i504.QuestionsCubit>(() => _i504.QuestionsCubit());
     gh.singleton<_i361.Dio>(() => coreInjectableModule.dio());
     gh.lazySingleton<_i558.FlutterSecureStorage>(
       () => coreInjectableModule.secureStorage,

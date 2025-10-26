@@ -1,5 +1,6 @@
 import 'package:alz_aware/features/home/presentation/screens/home_screen.dart';
 import 'package:alz_aware/features/onboarding/presentation/screens/onboarding_screen.dart';
+import 'package:alz_aware/features/questions/presentation/screens/questions_result.dart';
 import 'package:alz_aware/features/questions/presentation/screens/questions_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,16 @@ final GoRouter router = GoRouter(
       page: (state, context) => QuestionsScreen(
         key: ValueKey(context.locale.languageCode.toString()),
       ),
+    ),
+    _customAnimatedGoRoute(
+      route: Routes.results,
+      page: (state, context) {
+        final resultPercentage = state.extra as double?;
+        return QuestionsResult(
+          key: ValueKey(context.locale.languageCode.toString()),
+          resultPercentage: resultPercentage,
+        );
+      },
     ),
   ],
 );

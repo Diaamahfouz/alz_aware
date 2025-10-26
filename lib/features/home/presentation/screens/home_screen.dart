@@ -1,4 +1,5 @@
 import 'package:alz_aware/core/common/widgets/custom_button.dart';
+import 'package:alz_aware/core/common/widgets/image_picker_with_out_copper.dart';
 import 'package:alz_aware/core/routes/routes.dart';
 import 'package:alz_aware/core/theme/app_colors.dart';
 import 'package:alz_aware/core/theme/app_icons.dart';
@@ -82,8 +83,15 @@ class HomeScreen extends StatelessWidget {
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                               alignment: Alignment.centerLeft,
                             ),
-                            onPressed: () {
-                              // Navigate to help screen
+                            onPressed: () async {
+                              await ImagePickerWithOutCopper()
+                                  .showPhotoPickerBottomSheet(context, (
+                                    image,
+                                  ) async {
+                                    if (image != null && context.mounted) {
+                                      context.pop();
+                                    }
+                                  });
                             },
                             child: Text(
                               "Upload Your Brain MRI ",
@@ -104,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                         title: "Memory Match",
                         subtitle:
                             "Complete a daily memory challenge to improve your memory.",
-                        svgAsset: AppIcons.coreCommonAssetsIconsHugeiconsBrain,
+                        svgAsset: AppIcons.coreCommonAssetsIconsHugeIconsBrain,
                         subtitleColor: AppColors.grey74,
                       ),
                       HomeFeatureCard(
@@ -112,14 +120,15 @@ class HomeScreen extends StatelessWidget {
                         title: "No Routine Day",
                         subtitle:
                             "Change one daily habit , like taking a new route or cooking something new.",
-                        svgAsset: AppIcons.coreCommonAssetsIconsVector,
+                        svgAsset: AppIcons.coreCommonAssetsIconsHomeIcon,
                         subtitleColor: AppColors.grey74,
                       ),
                       HomeFeatureCard(
                         backgroundColor: AppColors.yellowFE,
                         title: "Brain Workout",
                         subtitle: "Solve one puzzle or riddle today.",
-                        svgAsset: AppIcons.coreCommonAssetsIconsIconoirPuzzle,
+                        svgAsset:
+                            AppIcons.coreCommonAssetsIconsIconPuzzleNormal,
                         subtitleColor: AppColors.grey74,
                       ),
                       SizedBox(height: 20),
