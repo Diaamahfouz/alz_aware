@@ -18,7 +18,7 @@ class QuestionsCubit extends Cubit<QuestionsState> {
   /// Returns the percentage result of the assessment (0-100)
   double get resultPercentage {
     if (maxScore == 0) return 0;
-    return 100 - (totalScore / maxScore) * 100;
+    return (totalScore / maxScore) * 100;
   }
 
   /// Helper to get the number of questions for a type

@@ -103,42 +103,45 @@ class SliderSectionState extends State<SliderSection> {
                       int itemCount = images.length;
                       if (itemCount == 0) return const SizedBox();
                       int actualIndex = index % itemCount;
-                      return Stack(
-                        alignment: Alignment.bottomCenter,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(16.r),
-                            child: Image.asset(
-                              images[actualIndex],
-                              // width: double.infinity,
-                              height: widget.isTablet ? 388.h : 288.h,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 8.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.originalBlack.withValues(
-                                alpha: 0.5,
-                              ),
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(16.r),
-                                bottomRight: Radius.circular(16.r),
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(16.r),
+                              child: Image.asset(
+                                images[actualIndex],
+                                // width: double.infinity,
+                                height: widget.isTablet ? 388.h : 288.h,
+                                fit: BoxFit.cover,
                               ),
                             ),
-                            child: Text(
-                              titles[actualIndex],
-                              textAlign: TextAlign.center,
-                              style: Styles.medium16.copyWith(
-                                color: AppColors.originalWhite,
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 8.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: AppColors.originalBlack.withValues(
+                                  alpha: 0.5,
+                                ),
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(16.r),
+                                  bottomRight: Radius.circular(16.r),
+                                ),
+                              ),
+                              child: Text(
+                                titles[actualIndex],
+                                textAlign: TextAlign.center,
+                                style: Styles.medium16.copyWith(
+                                  color: AppColors.originalWhite,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       );
                     },
                   ),

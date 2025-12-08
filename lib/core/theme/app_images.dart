@@ -2,7 +2,7 @@
 class AppImages {
   AppImages._();
   
-  static const String coreCommonAssetsImagesOnboarding = "lib/core/common/assets/images/onboarding.PNG";
+  static const String coreCommonAssetsImagesOnboarding = "lib/core/common/assets/images/onboarding.JPG";
 
   static const String coreCommonAssetsImagesSlide1 = "lib/core/common/assets/images/slide_1.JPG";
 
@@ -17,6 +17,8 @@ class AppImages {
   static const String coreCommonAssetsImagesSlider4 = "lib/core/common/assets/images/slider_4.JPG";
 
   static const String coreCommonAssetsImagesSlider6 = "lib/core/common/assets/images/slider_6.JPG";
+
+  static const String coreCommonAssetsImagesSplash = "lib/core/common/assets/images/splash.png";
 
   static const String coreCommonAssetsImagesSplashScreenLogoAndroid = "lib/core/common/assets/images/splash_screen_logo_android.png";
 
