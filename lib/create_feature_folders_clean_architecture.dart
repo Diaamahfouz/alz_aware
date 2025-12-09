@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 void main() {
-  const String featureName = 'questions'; // Change this to your feature name
+  const String featureName = 'result_from_image'; // Change this to your feature name
   // Project path
   final projectPath = "${Directory.current.path}/lib/features/$featureName";
   // final bool isWeb = false;

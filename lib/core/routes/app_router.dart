@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:alz_aware/features/home/presentation/screens/home_screen.dart';
 import 'package:alz_aware/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:alz_aware/features/questions/presentation/screens/questions_result.dart';
@@ -6,6 +8,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/result_from_image/presentation/screens/result_from_image_screen.dart';
 import 'routes.dart';
 
 final GoRouter router = GoRouter(
@@ -35,6 +38,16 @@ final GoRouter router = GoRouter(
         return QuestionsResult(
           key: ValueKey(context.locale.languageCode.toString()),
           resultPercentage: resultPercentage,
+        );
+      },
+    ),
+    _customAnimatedGoRoute(
+      route: Routes.resultFromImage,
+      page: (state, context) {
+        final image = (state.extra as Map<String, dynamic>?)?['image'] as File?;
+        return ResultFromImageScreen(
+          key: ValueKey(context.locale.languageCode.toString()),
+          imagePath: image,
         );
       },
     ),

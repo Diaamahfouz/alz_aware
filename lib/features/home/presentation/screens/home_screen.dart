@@ -89,7 +89,10 @@ class HomeScreen extends StatelessWidget {
                                     image,
                                   ) async {
                                     if (image != null && context.mounted) {
-                                      context.pop();
+                                      
+                                      context.go(Routes.resultFromImage,extra: {
+                                        'image':image
+                                      });
                                     }
                                   });
                             },
