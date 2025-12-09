@@ -439,10 +439,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_svg
-      sha256: "87fbd7c534435b6c5d9d98b01e1fd527812b82e68ddd8bd35fc45ed0fa8f0a95"
+      sha256: b9c2ad5872518a27507ab432d1fb97e8813b05f0fc693f9d40fad06d073e0678
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.3"
+    version: "2.2.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -457,10 +457,10 @@ packages:
     dependency: "direct main"
     description:
       name: get_it
-      sha256: "1d648d2dd2047d7f7450d5727ca24ee435f240385753d90b49650e3cdff32e56"
+      sha256: a4292e7cf67193f8e7c1258203104eb2a51ec8b3a04baa14695f4064c144297b
       url: "https://pub.dev"
     source: hosted
-    version: "9.2.0"
+    version: "8.2.0"
   glob:
     dependency: transitive
     description:
@@ -473,10 +473,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: c92d18e1fe994cb06d48aa786c46b142a5633067e8297cff6b5a3ac742620104
+      sha256: d8f590a69729f719177ea68eb1e598295e8dbc41bbc247fed78b2c8a25660d7c
       url: "https://pub.dev"
     source: hosted
-    version: "17.0.0"
+    version: "16.3.0"
   graphs:
     dependency: transitive
     description:
@@ -553,10 +553,10 @@ packages:
     dependency: "direct main"
     description:
       name: image_picker
-      sha256: "784210112be18ea55f69d7076e2c656a4e24949fa9e76429fe53af0c0f4fa320"
+      sha256: "736eb56a911cf24d1859315ad09ddec0b66104bc41a7f8c5b96b4e2620cf5041"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.1"
+    version: "1.2.0"
   image_picker_android:
     dependency: transitive
     description:
@@ -617,10 +617,10 @@ packages:
     dependency: "direct main"
     description:
       name: injectable
-      sha256: "8fc24421cfeff76d1d38484d8b9617beeb54a58b6edfd002b10cc896b8b8f3fe"
+      sha256: f71ef28f5ed30603ab9be004425fd5cd4a473806f5de269d35deb33b61917534
       url: "https://pub.dev"
     source: hosted
-    version: "2.7.1+2"
+    version: "2.5.2"
   injectable_generator:
     dependency: "direct dev"
     description:
@@ -962,14 +962,6 @@ packages:
     description:
       name: shelf_web_socket
       sha256: "3632775c8e90d6c9712f883e633716432a27758216dfb61bd86a8321c0580925"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0"
-  shimmer:
-    dependency: "direct main"
-    description:
-      name: shimmer
-      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
