@@ -22,32 +22,29 @@ class QuestionsResult extends StatelessWidget {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: MediaQuery.of(context).size.height * 0.9,
-            ),
-            child: Column(
-              spacing: 32,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Text('Assessment Result', style: Styles.bold18),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            spacing: 16,
+            children: [
+              Align(
+                alignment: AlignmentDirectional.topStart,
+                child: Text('Assessment Result', style: Styles.bold18),
+              ),
+              HalfPieChart(
+                percentage: resultPercentage ?? 0,
+                displayPercentage: resultPercentage ?? 0,
+                size: 200,
+              ),
+              Text(
+                getRiskLabel(resultPercentage ?? 0),
+                style: Styles.medium16.copyWith(
+                  color: getColorBasedOnRisk(resultPercentage ?? 0),
                 ),
-                HalfPieChart(
-                  percentage: resultPercentage ?? 0,
-                  displayPercentage: resultPercentage ?? 0,
-                  size: 200,
-                ),
-                Text(
-                  getRiskLabel(resultPercentage ?? 0),
-                  style: Styles.medium16.copyWith(
-                    color: getColorBasedOnRisk(resultPercentage ?? 0),
-                  ),
-                ),
-                getResultWidget(resultPercentage ?? 0),
-              ],
-            ),
+              ),
+              getResultWidget(resultPercentage ?? 0),
+            ],
           ),
         ),
       ),

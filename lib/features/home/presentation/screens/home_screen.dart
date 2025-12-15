@@ -25,14 +25,7 @@ class HomeScreen extends StatelessWidget {
           height: 300,
           width: 200,
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {
-              // Handle settings icon press
-            },
-          ),
-        ],
+        actions: [],
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -89,10 +82,10 @@ class HomeScreen extends StatelessWidget {
                                     image,
                                   ) async {
                                     if (image != null && context.mounted) {
-                                      
-                                      context.go(Routes.resultFromImage,extra: {
-                                        'image':image
-                                      });
+                                      context.go(
+                                        Routes.resultFromImage,
+                                        extra: {'image': image},
+                                      );
                                     }
                                   });
                             },

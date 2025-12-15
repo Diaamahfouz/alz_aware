@@ -11,14 +11,14 @@ class HalfPieChart extends StatelessWidget {
     super.key,
     required this.percentage,
     required this.displayPercentage,
-    this.size = 200,
+    this.size = 300,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: size,
-      height: size / 2 + 40,
+      height: size / 2 + 80,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -79,7 +78,8 @@ String getIconSeverePrediction(String prediction, int index) {
 String getTitleForPrediction(String prediction) {
   if (prediction == noImpairment) {
     return "Normal";
-  } else if (prediction == moderateImpairment || prediction == "Mild Impairment") {
+  } else if (prediction == moderateImpairment ||
+      prediction == "Mild Impairment") {
     return "Moderate Risk";
   } else if (prediction == "Out of scope") {
     return prediction;
@@ -94,7 +94,8 @@ String outOfScope = "Out of scope";
 Color getTileColor(String prediction) {
   if (prediction == noImpairment) {
     return AppColors.green32;
-  } else if (prediction == moderateImpairment || prediction == "Mild Impairment") {
+  } else if (prediction == moderateImpairment ||
+      prediction == "Mild Impairment") {
     return AppColors.yellowFEC;
   } else {
     return AppColors.redF3;
@@ -106,6 +107,8 @@ String getDescriptionForPrediction(String prediction) {
     return "Your brain scan looks healthy, No concerning changes detected.";
   } else if (prediction == "Moderate Impairment") {
     return "Your brain scan looks healthy, No concerning changes detected.";
+  } else if (prediction == "Out of scope") {
+    return "The uploaded image is out of the model's scope. Please try with a different image.";
   } else {
     return "Your brain scan looks healthy, No concerning changes detected.";
   }

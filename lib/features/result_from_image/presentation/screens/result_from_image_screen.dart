@@ -54,132 +54,150 @@ class _ResultFromImageScreenState extends State<ResultFromImageScreen> {
               return ResultFromImageShimmer();
             } else if (state.getPredictionState?.state ==
                 StateStatusEnum.error) {
-              return Column(
-                children: [
-                  Center(
-                    child: Text(
-                      state.getPredictionState?.exception ??
-                          'An error occurred',
-                      style: Styles.regular16.copyWith(color: AppColors.redD9),
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Text(
+                        state.getPredictionState?.exception ??
+                            'An error occurred',
+                        style: Styles.regular16.copyWith(color: AppColors.redD9),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 16),
-                  CustomButton(
-                    title: 'Retry',
-                    onTap: () {
-                      if (widget.imagePath != null) {
-                        cubit.getPrediction(widget.imagePath);
-                      }
-                    },
-                  ),
-                ],
+                    SizedBox(height: 16),
+                    CustomButton(
+                      title: 'Retry',
+                      onTap: () {
+                        if (widget.imagePath != null) {
+                          cubit.getPrediction(widget.imagePath);
+                        }
+                      },
+                    ),
+                  ],
+                ),
               );
             } else {
               final noImpairmentPrediction =
                   state.getPredictionState?.data ?? noImpairment;
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 24),
-                    Align(
-                      alignment: AlignmentDirectional.topStart,
-                      child: Text('Your Scan Result', style: Styles.bold18),
-                    ),
-                    SizedBox(height: 24),
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(
-                        vertical: 24,
-                        horizontal: 16,
+              return SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 24),
+                      Align(
+                        alignment: AlignmentDirectional.topStart,
+                        child: Text('Your Scan Result', style: Styles.bold18),
                       ),
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteF4,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            getTitleForPrediction(noImpairmentPrediction),
-                            style: Styles.medium16.copyWith(
-                              fontSize: 20,
-                              color: getTileColor(noImpairmentPrediction),
+                      SizedBox(height: 24),
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          vertical: 24,
+                          horizontal: 16,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.whiteF4,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Column(
+                          children: [
+                            Text(
+                              getTitleForPrediction(noImpairmentPrediction),
+                              style: Styles.medium16.copyWith(
+                                fontSize: 20,
+                                color: getTileColor(noImpairmentPrediction),
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 16),
-                          Text(
-                            getDescriptionForPrediction(noImpairmentPrediction),
-                            style: Styles.regular14.copyWith(
-                              color: AppColors.grey74,
+                            SizedBox(height: 16),
+                            Text(
+                              getDescriptionForPrediction(
+                                noImpairmentPrediction,
+                              ),
+                              style: Styles.regular14.copyWith(
+                                color: AppColors.grey74,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 32),
-                    Text(
-                      "Tips to Maintain a Healthy Mind ",
-                      style: Styles.medium16,
-                    ),
-                    HomeFeatureCard(
-                      backgroundColor: AppColors.redFF,
-                      title: getTitleSeverePrediction(
-                        noImpairmentPrediction,
-                        0,
+                      SizedBox(height: 32),
+
+                      noImpairmentPrediction != outOfScope
+                          ? Column(
+                              children: [
+                                Text(
+                                  "Tips to Maintain a Healthy Mind ",
+                                  style: Styles.medium16,
+                                ),
+                                HomeFeatureCard(
+                                  backgroundColor: AppColors.redFF,
+                                  title: getTitleSeverePrediction(
+                                    noImpairmentPrediction,
+                                    0,
+                                  ),
+                                  subtitle: getSubTitleSeverePrediction(
+                                    noImpairmentPrediction,
+                                    0,
+                                  ),
+                                  svgAsset: getIconSeverePrediction(
+                                    noImpairmentPrediction,
+                                    0,
+                                  ),
+                                  subtitleColor: AppColors.grey74,
+                                ),
+                                HomeFeatureCard(
+                                  backgroundColor: AppColors.greenF2,
+                                  title: getTitleSeverePrediction(
+                                    noImpairmentPrediction,
+                                    1,
+                                  ),
+                                  subtitle: getSubTitleSeverePrediction(
+                                    noImpairmentPrediction,
+                                    1,
+                                  ),
+                                  svgAsset: getIconSeverePrediction(
+                                    noImpairmentPrediction,
+                                    1,
+                                  ),
+                                  subtitleColor: AppColors.grey74,
+                                ),
+                                HomeFeatureCard(
+                                  backgroundColor: AppColors.yellowFE,
+                                  title: getTitleSeverePrediction(
+                                    noImpairmentPrediction,
+                                    2,
+                                  ),
+                                  subtitle: getSubTitleSeverePrediction(
+                                    noImpairmentPrediction,
+                                    2,
+                                  ),
+                                  svgAsset: getIconSeverePrediction(
+                                    noImpairmentPrediction,
+                                    2,
+                                  ),
+                                  subtitleColor: AppColors.grey74,
+                                ),
+                              ],
+                            )
+                          : SizedBox.shrink(),
+                      SizedBox(height: 20),
+                      CustomButton(
+                        title: "Done",
+                        isGradient: false,
+                        onTap: () {
+                          context.go(Routes.home);
+                        },
                       ),
-                      subtitle: getSubTitleSeverePrediction(
-                        noImpairmentPrediction,
-                        0,
-                      ),
-                      svgAsset: getIconSeverePrediction(
-                        noImpairmentPrediction,
-                        0,
-                      ),
-                      subtitleColor: AppColors.grey74,
-                    ),
-                    HomeFeatureCard(
-                      backgroundColor: AppColors.greenF2,
-                      title: getTitleSeverePrediction(
-                        noImpairmentPrediction,
-                        1,
-                      ),
-                      subtitle: getSubTitleSeverePrediction(
-                        noImpairmentPrediction,
-                        1,
-                      ),
-                      svgAsset: getIconSeverePrediction(
-                        noImpairmentPrediction,
-                        1,
-                      ),
-                      subtitleColor: AppColors.grey74,
-                    ),
-                    HomeFeatureCard(
-                      backgroundColor: AppColors.yellowFE,
-                      title: getTitleSeverePrediction(
-                        noImpairmentPrediction,
-                        2,
-                      ),
-                      subtitle: getSubTitleSeverePrediction(
-                        noImpairmentPrediction,
-                        2,
-                      ),
-                      svgAsset: getIconSeverePrediction(
-                        noImpairmentPrediction,
-                        2,
-                      ),
-                      subtitleColor: AppColors.grey74,
-                    ),
-                    SizedBox(height: 20),
-                    CustomButton(
-                      title: "Done",
-                      isGradient: false,
-                      onTap: () {
-                        context.go(Routes.home);
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               );
             }
